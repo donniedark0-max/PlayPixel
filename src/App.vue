@@ -1,47 +1,31 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import Player from './components/Player.vue';
+import background1 from '../src/assets/images/pixel_art/background1.gif'; // Replace with your pixel art image
+import background2 from '../src/assets/images/pixel_art/background2.gif'; // Optional, another calming background
+
+// Optional: Add logic for switching backgrounds
+let currentBackground = background1;
+// ... (code to handle background change, e.g., button click)
+
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <div class="app" :style="{ backgroundImage: `url(${currentBackground})` }">
+    <Player />
+  </div>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+.app {
+  position: absolute;
+  top: s0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>
